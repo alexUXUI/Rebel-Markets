@@ -12,3 +12,16 @@
 </header>
 <h1>add post</h1>
 {{hello}}
+<div class="landing-page-wrapper">
+  <form id="myForm" role="form" data-toggle="validator" method="POST" action="/addcollection" ng-submit="">
+    <input type="text"  name="title" placeholder="Your title here:"  required>
+    <input type="text"  name="description" placeholder="Your description here:" required>
+    <input type="text"  name="photo" placeholder="Your photo here:" required>
+    <input type="text"  name="music" placeholder="Your music here:" required>
+    <input type="text"  name="link" placeholder="Your link here:" required>
+    <input type="text"  name="causes" placeholder="Your causes here:" required>
+    <input type="checkbox"  name="forsale" placeholder="Forsale:" required>
+
+    <button type="submit" class="post-btn">Submit</button>
+  </form>
+</div>

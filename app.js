@@ -25,6 +25,13 @@ app.use(express.static("./client"));
 app.use('/', routes);
 app.use('/users', users);
 
+app.get('/mainpage', function(req, res, next){
+	knex('users').select().then(function(data){
+		console.log('sending back user data');
+		res.status(200).json({data: data})
+	})
+})
+
 app.post('/adduser', function(req, res, next) {
   knex('users').insert({
     username: req.body.username,
@@ -37,11 +44,18 @@ app.post('/adduser', function(req, res, next) {
   })
 });
 
-app.get('/mainpage', function(req, res, next){
-	knex('users').select().then(function(data){
-		console.log('sending back user data');
-		res.status(200).json({data: data})
-	})
+app.post('/addcollection', function(req, res, next){
+  knex('collections').insert({
+    title: req.body.title,
+    description: req.body.description,
+    photo: req.body.photo,
+    music: req.body.music,
+    link: req.body.link,
+    causes: req.body.causes,
+    forsale: req.body.forsale,
+  }).then(function(){
+    res.redirect("/#/primary")
+  })
 })
 
 // catch 404 and forward to error handler

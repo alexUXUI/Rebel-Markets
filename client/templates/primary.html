@@ -12,10 +12,10 @@
 </header>
 <h1>Main</h1>
 {{hello}}
-<ul>
-  <li ng-repeat="user in realUsers">
+<ul ng-repeat="user in realUsers">
+  <li>
     <p>{{user.username}}</p>
-    <img src="{{user.photo_url}}" />
+    <img src="{{user.blurb}}" />
+    <p>{{user.photo_url}}</p>
   </li>
-
 </ul>
