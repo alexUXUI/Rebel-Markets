@@ -1,5 +1,10 @@
 <div class='landing-page-wrapper'>
   <h1>Bring your Rebellion to Market</h1>
   <a href='/#/onboard'>Start the Revolution</a>
-  {{hello}}
+
+  <form id="myForm" role="form" data-toggle="validator" method="POST" action="/login" ng-submit="">
+    <input type="text"  name="username" placeholder="Your name here:" data-error="Bruh, that email address is invalid" required> 
+    <input type="text"  name="password" placeholder="Your password here:" data-error="Bruh, that email address is invalid" required>
+    <button type="submit" class="post-btn">Submit</button>
+
 </div>

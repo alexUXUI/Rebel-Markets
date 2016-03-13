@@ -25,6 +25,15 @@ app.use(express.static("./client"));
 app.use('/', routes);
 app.use('/users', users);
 
+app.post('/login', function(req, res, next){
+	knex('users').first().where({username: req.body.username}).then(function(id){
+		console.log('users id', id)
+		var id = id.id;
+		console.log('here\'s the user id: ',id);
+		res.redirect('/#/'+id);
+	})
+})
+
 app.get('/mainpage', function(req, res, next){
 	knex('users').select().then(function(data){
 		console.log('sending back user data');
@@ -39,11 +48,13 @@ app.post('/adduser', function(req, res, next) {
     blurb: req.body.blurb,
     causes: req.body.causes,
     password: req.body.password,
-  }).then(function(id){
-    var id = id.id;
-    console.log('this is the users id', id);
-    res.redirect('/#/primary' + id);
-  })
+  }).then(function(){
+		knex('users').first().where({username: req.body.username}).then(function(user){
+			console.log('here\'s your new user: ', user)
+			var id = user.id;
+			res.redirect('/#/'+id);
+		})
+	})
 });
 
 app.post('/addcollection', function(req, res, next){

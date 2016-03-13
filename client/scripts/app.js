@@ -4,7 +4,7 @@ angular.module('capstone', ['ui.router'])
       $stateProvider.state('primary', {
         templateUrl: 'templates/primary.html',
         controller: 'PrimaryController',
-        url: '/'
+        url: '/:id'
       }).state('addpost', {
         templateUrl: 'templates/addcollection.html',
         controller: 'AddCollectionController',
