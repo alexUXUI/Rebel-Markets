@@ -39,8 +39,9 @@ app.post('/adduser', function(req, res, next) {
     blurb: req.body.blurb,
     causes: req.body.causes,
     password: req.body.password,
-  }).then(function(){
-    res.redirect('/#/primary');
+  }).then(function(id){
+    console.log('this is the users id', id);
+    res.redirect('/#/primary' + id);
   })
 });
 
