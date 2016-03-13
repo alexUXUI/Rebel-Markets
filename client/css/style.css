@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #555;
+  color: #FFF;
+}
+
+header {
+  color: white;
+  background: linear-gradient(to right, #333, #111);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #000;
+}
+
+header ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header li {
+  margin-right: 2em;
+}
+
+main>ul.overview {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+
+main>li {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.detail li {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings input {
+  padding: 0.1em;
+  font-size: 0.8em;
+  border: 1px solid #111;
+  text-align: right;
+  width: 3em;
+  outline: none;
+  margin-top: 2em;
+}
+
+.good, .warning, .critical {
+  width: 20vw;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #333;
+}
+
+.good {
+  background-color: #AAFF99;
+  color: green;
+}
+
+.warning {
+  background-color: #FFFF99;
+  color: #999925;
+}
+
+.critical {
+  background-color: #FF99AA;
+  color: darkred;
+}
