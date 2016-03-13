@@ -5,14 +5,15 @@ angular.module('capstone', ['ui.router'])
         templateUrl: 'templates/primary.html',
         controller: 'PrimaryController',
         url: '/'
-      }).state('landing', {
-        templateUrl: 'templates/landing.html',
-        controller: 'LandingController',
-        url: '/landing'
       }).state('addpost', {
         templateUrl: 'templates/addpost.html',
         controller: 'addpostcontroller',
         url: '/addpost'
+      })
+      .state('landing', {
+        templateUrl: 'templates/landing.html',
+        controller: 'LandingController',
+        url: '/landing'
       }).state('profile', {
         templateUrl: 'templates/profile.html',
         controller: 'ProfileController',
