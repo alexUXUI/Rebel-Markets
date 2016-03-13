@@ -5,11 +5,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 require('dotenv').load();
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var session = require('express-session')
 var db = require('knex');
 var knex = require('./db/knex');
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var auth = require('./routes/auth')
 var app = express();
+var passport = require('passport');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -24,6 +28,39 @@ app.use(express.static("./client"));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/auth', auth);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+function ensureAuthenticated(req, res, next) {
+  console.log("ensureAuthenticated",req.isAuthenticated());
+ if (req.isAuthenticated()) {
+    return next();
+  }
+ res.redirect('/');
+}
+app.get('/auth/google', passport.authenticate('google', {
+  scope: 'https://www.googleapis.com/auth/plus.login'
+}));
+app.get('/auth/google/callback', passport.authenticate('google', {
+  failureRedirect: '/login'
+}),
+
+function(req, res, next) {
+  // Successful authentication, redirect home.
+  console.log(req.user.id)
+  console.log(req.user.provider);
+  console.log(req.user.image);
+  res.redirect('/users');
+});
+
+
+
+
+
+
 
 app.post('/login', function(req, res, next){
 	knex('users').first().where({username: req.body.username}).then(function(id){

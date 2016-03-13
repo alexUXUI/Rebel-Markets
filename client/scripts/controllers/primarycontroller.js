@@ -8,5 +8,7 @@ angular.module('capstone')
       console.log($scope.realUsers)
     })
 
+    
+
     $scope.hello = "Hello from primary!"
   }

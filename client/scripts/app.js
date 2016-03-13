@@ -4,11 +4,11 @@ angular.module('capstone', ['ui.router'])
       $stateProvider.state('primary', {
         templateUrl: 'templates/primary.html',
         controller: 'PrimaryController',
-        url: '/'
+        url: '/:id'
       }).state('addpost', {
         templateUrl: 'templates/addcollection.html',
         controller: 'AddCollectionController',
-        url: '/'
+        url: '/addcollection/:id'
       })
       .state('landing', {
         templateUrl: 'templates/landing.html',
@@ -17,10 +17,10 @@ angular.module('capstone', ['ui.router'])
       }).state('profile', {
         templateUrl: 'templates/profile.html',
         controller: 'ProfileController',
-        url: '/profile'
+        url: '/profile/:id'
       }).state('onboard', {
         templateUrl: 'templates/onboard.html',
         controller: 'OnboardController',
-        url: '/onboard'
+        url: '/onboard/:id'
       });
     });
