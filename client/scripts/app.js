@@ -6,9 +6,9 @@ angular.module('capstone', ['ui.router'])
         controller: 'PrimaryController',
         url: '/'
       }).state('addpost', {
-        templateUrl: 'templates/addpost.html',
-        controller: 'addpostcontroller',
-        url: '/addpost'
+        templateUrl: 'templates/primary.html',
+        controller: 'PrimaryController',
+        url: '/'
       })
       .state('landing', {
         templateUrl: 'templates/landing.html',
