@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 require('dotenv').load();
+var db = require('knex');
+var knex = require('./db/knex');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var app = express();
@@ -22,6 +24,25 @@ app.use(express.static("./client"));
 
 app.use('/', routes);
 app.use('/users', users);
+
+app.post('/adduser', function(req, res, next) {
+  knex('users').insert({
+    username: req.body.username,
+    photo_url: req.body.photo_url,
+    blurb: req.body.blurb,
+    causes: req.body.causes,
+    password: req.body.password,
+  }).then(function(){
+    res.redirect('/#/primary');
+  })
+});
+
+app.get('/mainpage', function(req, res, next){
+	knex('users').select().then(function(data){
+		console.log('sending back user data');
+		res.status(200).json({data: data})
+	})
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

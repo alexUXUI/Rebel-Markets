@@ -2,12 +2,12 @@
 <div class="landing-page-wrapper">
   <h1>Onboard</h1>
   <p>Enter in some info about yourself</p>
-  <form id="myForm" role="form" data-toggle="validator" method="POST" ng-submit="">
-    <input type="text"  name="title" placeholder="Your name here:" data-error="Bruh, that email address is invalid" required>
-    <input type="text"  name="description" placeholder="Your blurb here:" data-error="Bruh, that email address is invalid" required>
-    <input type="text"  name="tag" placeholder="Your image here:" data-error="Bruh, that email address is invalid" required>
-    <input type="text"  name="tag" placeholder="Your causes here:" data-error="Bruh, that email address is invalid" required>
-    <input type="text"  name="tag" placeholder="Your password here:" data-error="Bruh, that email address is invalid" required>
+  <form id="myForm" role="form" data-toggle="validator" method="POST" action="/adduser" ng-submit="">
+    <input type="text"  name="username" placeholder="Your name here:" data-error="Bruh, that email address is invalid" required>
+    <input type="text"  name="photo_url" placeholder="Your blurb here:" data-error="Bruh, that email address is invalid" required>
+    <input type="text"  name="blurb" placeholder="Your image here:" data-error="Bruh, that email address is invalid" required>
+    <input type="text"  name="causes" placeholder="Your causes here:" data-error="Bruh, that email address is invalid" required>
+    <input type="text"  name="password" placeholder="Your password here:" data-error="Bruh, that email address is invalid" required>
     <button type="submit" class="post-btn">Submit</button>
   </form>
   {{hello}}

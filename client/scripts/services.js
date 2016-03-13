@@ -1,2 +1,7 @@
 angular.module('capstone')
-  .factory('StatusService', StatusService)
+  .factory('getUsers', function($http){
+    return $http.get('/mainpage').then(function(response){
+      var users = response.data.data;
+      return users;
+    })
+  })

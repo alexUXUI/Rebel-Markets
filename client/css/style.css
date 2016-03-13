@@ -60,3 +60,12 @@ ul {
 .landing-page-wrapper > * {
   padding: 20px;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+form * {
+  padding:5px;
+  margin: 5px;
+}
