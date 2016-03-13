@@ -6,8 +6,8 @@ var session = require('express-session')
 var app = express();
 
 passport.use(new GoogleStrategy({
-    clientID: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
+    clientID: '584410631450-198uljradcms25p3nl7j8k4ghgnmjovu.apps.googleusercontent.com',
+    clientSecret: 'Mp4vMZMwuvO9DLl-_DwVjplY',
     callbackURL: "https://rebelmarkets.herokuapp.com"
   },
   function(accessToken, refreshToken, profile, done) {
