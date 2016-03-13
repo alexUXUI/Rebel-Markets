@@ -1,6 +1,6 @@
 angular.module('capstone')
-  .controller('PrimaryController', LandingController)
+  .controller('PrimaryController', PrimaryController)
 
-  function LandingController($scope){
+  function PrimaryController($scope){
     $scope.hello = "Hello from primary!"
   }

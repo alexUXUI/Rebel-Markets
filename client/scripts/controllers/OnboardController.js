@@ -1,6 +1,6 @@
 angular.module('capstone')
-  .controller('OnboardController', LandingController)
+  .controller('OnboardController', OnboardController)
 
-  function LandingController($scope){
+  function OnboardController($scope){
     $scope.hello = "Hello from onboard"
   }
