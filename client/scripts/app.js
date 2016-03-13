@@ -6,8 +6,8 @@ angular.module('capstone', ['ui.router'])
         controller: 'PrimaryController',
         url: '/'
       }).state('addpost', {
-        templateUrl: 'templates/addpost.html',
-        controller: 'OnboardController',
+        templateUrl: 'templates/addcollection.html',
+        controller: 'AddCollectionController',
         url: '/'
       })
       .state('landing', {
