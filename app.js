@@ -40,6 +40,7 @@ app.post('/adduser', function(req, res, next) {
     causes: req.body.causes,
     password: req.body.password,
   }).then(function(id){
+    var id = id.id;
     console.log('this is the users id', id);
     res.redirect('/#/primary' + id);
   })

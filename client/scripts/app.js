@@ -11,7 +11,7 @@ angular.module('capstone', ['ui.router'])
         url: '/landing'
       }).state('addpost', {
         templateUrl: 'templates/addpost.html',
-        controller: 'AddPostController',
+        controller: 'addpostcontroller',
         url: '/addpost'
       }).state('profile', {
         templateUrl: 'templates/profile.html',

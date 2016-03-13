@@ -1,6 +1,6 @@
 angular.module('capstone')
-  .controller('AddPostController', AddPostController)
+  .controller('addpostcontroller', addpostcontroller)
 
-  function AddPostController($scope){
+  function addpostcontroller($scope){
     $scope.hello = "Hello from add post"
   }

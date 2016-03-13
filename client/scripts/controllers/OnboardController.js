@@ -3,5 +3,4 @@ angular.module('capstone')
 
   function OnboardController($scope){
     $scope.hello = "Hello from onboard"
-    
   }
